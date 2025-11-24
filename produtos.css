@@ -175,6 +175,13 @@ body[data-bs-theme="dark"] .btn-saiba-mais:hover {
     color: #F47C38 !important; 
 }
 
+body[data-bs-theme="dark"] .btn-torcisao-dropdown {
+    background-color: var(--cor-primaria-cinzaclaro); 
+    border-color: var(--cor-primaria-cinzaclaro);
+    color: var(--cor-terciaria-cinzaescuro);
+    font-weight: 500;
+}
+
 @media (max-width: 767px) {
     .product-cards-container {
         align-items: center;
