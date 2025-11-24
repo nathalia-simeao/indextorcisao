@@ -33,9 +33,12 @@
     border: none;
     border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
-    padding: 10px 20px;
+    height: auto !important;
+    padding: 10px 20px !important;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
+
 .btn-especificacoes-laranja:hover {
     background-color: transparent;
     border: 2px solid #F47C38;
