@@ -1,6 +1,6 @@
 /* --- ESTILOS GERAIS DA SEÇÃO FORMULÁRIO --- */
 .form-section {
-    background-image: url(../assets/banners/Banner\ -\ form.png);
+    background-image: url(assets/banners/Banner\ -\ form.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -54,7 +54,7 @@
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
-    height: calc(3.5rem + 2px) !important; 
+    height: calc(4rem + 2px) !important; 
     padding-top: 1.625rem !important;
     padding-bottom: 0.625rem !important;
     box-shadow: none; 
@@ -67,7 +67,7 @@
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
-    height: calc(3.5rem + 2px) !important; 
+    height: calc(4rem + 2px) !important; 
     padding-top: 1.625rem !important;
     padding-bottom: 0.625rem !important;
     box-shadow: none; 
