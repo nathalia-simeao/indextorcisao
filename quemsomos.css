@@ -33,9 +33,12 @@
     border: none;
     border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
+    display: inline-block !important;
     height: auto !important;
     padding: 10px 20px !important;
+    text-decoration: none !important;
     transition: background-color 0.3s;
+    width: auto !important;
     white-space: nowrap;
 }
 
