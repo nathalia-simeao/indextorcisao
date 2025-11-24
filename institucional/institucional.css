@@ -1,0 +1,191 @@
+:root {
+    --cor-primaria-cinzaclaro:#E7E5E3;
+    --cor-secundaria-cinzamedio:#606060;
+    --cor-terciaria-cinzaescuro:#2C292A;
+    --cor-decoracao-laranja:#F47C38;
+    --cor-neutra-branco:#FFFFFF;
+    --font-family: "Montserrat", sans-serif;
+}
+
+main {
+    padding-top: 120px;
+}
+
+.page-header-doc {
+    background-color: var(--cor-decoracao-laranja); 
+    border: none;
+    padding-top: 2rem !important;
+}
+
+.page-header-doc .page-main-title {
+    color: #e3e5e7 !important; 
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    padding-top: 1.5rem !important
+}
+
+.policy-block {
+    padding: 0;
+}
+
+.policy-subtitle {
+    font-size: 1.8rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--cor-decoracao-laranja-clara); 
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-laranja {
+    color: var(--cor-decoracao-laranja) !important;
+}
+
+.policy-block p, 
+.policy-block li {
+    line-height: 1.8;
+    color: var(--cor-secundaria-cinza-escuro);
+    margin-bottom: 1rem;
+}
+
+
+.politica-qualidade-container {
+    background-color: var(--cor-primaria-clara); 
+}
+
+.titulo-instrucao {
+    font-size: 1.5rem;
+    color: var(--cor-decoracao-laranja); 
+    font-weight: 600;
+}
+
+
+[data-bs-theme="dark"] .page-header-doc {
+    background-color: var(--cor-terciaria-cinzaescuro);
+}
+
+[data-bs-theme="dark"] .page-header-doc .page-main-title {
+    color: var(--cor-decoracao-laranja);
+}
+
+.torcisao-grid-wrapper {
+    display: grid;
+    grid-template-columns: 150px auto; 
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start; 
+    column-gap: 0;
+}
+
+.lista-torcisao {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    text-align: center;
+    min-height: 400px;
+    align-items: center;
+}
+
+/* 2. Estilização de Cada Item da Política */
+.politica-item {
+    display: flex;
+    align-items: center;
+    cursor: default;
+    justify-content: center;
+    padding: 5px 0;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* 3. Estilização da Letra: Cor Base (Cinza Médio para TODOS) */
+.politica-item::before {
+    content: attr(data-letra); 
+    font-size: 4rem; 
+    font-weight: 800;
+    margin-right: 0;
+    line-height: 1;
+    color: var(--cor-secundaria-cinzamedio);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+/* 4. Estilização da Área de Texto Expandido (Mantida) */
+.texto-expandido-area { 
+    position: relative; 
+    padding: 0; 
+    padding-top: 0;
+    pointer-events: none; 
+    font-size: 1.5rem;
+    line-height: 2.75rem;
+    min-height: 300px;
+    display: flex; 
+    flex-direction: column;
+    align-self: stretch;
+    transition: transform 0.3s;
+    top: 0;
+}
+
+.texto-expandido-area p {
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out;
+    position: static !important;
+    width: 100%;
+    color: var(--cor-terciaria-cinzaescuro);
+}
+
+.texto-expandido-area p.texto-active {
+    /* Zere qualquer margem superior que o browser possa estar aplicando */
+    margin-top: 15px; 
+}
+
+
+/* 5. Estilos para o Hover/Ativo */
+
+.politica-item.active {
+    background-color: transparent; 
+}
+
+.politica-item.active::before {
+    transform: scale(1.1);
+    color: var(--cor-decoracao-laranja); 
+}
+
+.texto-expandido-area p.texto-active span:first-child {
+    color: var(--cor-decoracao-laranja); 
+}
+
+.texto-expandido-area p.texto-active.primeiro-item span:first-child {
+    color: var(--cor-secundaria-cinzamedio) !important; 
+}
+
+.lista-torcisao .politica-item {
+    align-items: center;
+    height: 60px;
+}
+
+[data-bs-theme="dark"] .politica-item::before {
+    /* Mude as letras inativas para um cinza claro */
+    color: var(--cor-primaria-cinzaclaro); 
+}
+
+.texto-expandido-area p.texto-revelado {
+    /* Zere a margem superior e ajuste a margem inferior para o espaçamento entre as linhas */
+    margin-top: 16px; 
+    margin-bottom: 15px; /* Mantenha este ajuste fino */
+}
+
+/* 2. Letra Grande (Ativa/Hover - A cor laranja no modo normal) */
+[data-bs-theme="dark"] .politica-item.active::before {
+    color: var(--cor-decoracao-laranja); 
+    transform: scale(1.1);
+}
+
+[data-bs-theme="dark"] .texto-expandido-area p {
+    color: var(--dark-text-light) !important; 
+}

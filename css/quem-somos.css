@@ -1,0 +1,419 @@
+.quem-somos-section {
+    background-color: var(--cor-primaria-cinzaclaro);
+    color: var(--cor-terciaria-cinzaescuro);
+}
+
+/* TÍTULOS E SUBTÍTULOS */
+.subtitulo-quem-somos {
+    color: var(--cor-terciaria-cinzaescuro);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.titulo-quem-somos {
+    color: var(--cor-decoracao-laranja);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* SUBTÍTULO DESTAQUE COM LINHA LATERAL */
+.subtitulo-destaque {
+    font-size: 1.1rem;
+    --bs-border-opacity: 1; 
+}
+.border-torcisao-laranja {
+    border-color: var(--cor-decoracao-laranja) !important;
+}
+
+/* BOTÃO DE COTAÇÃO */
+.btn-torcisao-laranja {
+    background-color: var(--cor-decoracao-laranja);
+    border: none;
+    border-radius: 10px 0 10px 0;
+    color: var(--cor-neutra-branco);
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+.btn-torcisao-laranja:hover {
+    background-color: transparent;
+    border: 2px solid #F47C38;
+    color: #F47C38;
+    
+}
+
+.btn-social-proof {
+    background-color: transparent;
+    border: 2px solid var(--cor-decoracao-laranja);
+    border-radius: 10px 0 10px 0;
+    color: var(--cor-decoracao-laranja);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+    padding: 15px 20px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+}
+
+.btn-social-proof:hover {
+    background-color: var(--cor-decoracao-laranja);
+    color: var(--cor-neutra-branco);
+    transform: scale(1.05);
+}
+
+.numero-prova {
+    font-size: 2.2rem;
+    font-weight: 900;
+}
+
+.descricao-prova {
+    color: var(--cor-terciaria-cinzaescuro); 
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* MODO HOVER: A descrição deve ficar branca/clara no hover do botão */
+.btn-social-proof:hover .descricao-prova {
+    color: var(--cor-neutra-branco);
+}
+
+/* BOTÕES MVV */
+.btn-mvv {
+    background-color: #212529;
+    border: none;
+    border-radius: 10px 0 10px 0; 
+    color: #E7E5E3;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 15px;
+    transition: background-color 0.3s;
+    width: 30%;
+}
+
+.btn-mvv:hover {
+    background-color: transparent;
+    border: 2px solid var(--cor-decoracao-laranja);
+    color: var(--cor-decoracao-laranja);
+    transform: scale(1.05);
+}
+
+/* CAIXA DE CONTEÚDO (Collapse) */
+
+.titulo-historia {
+    color: var(--cor-decoracao-laranja);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 30px;
+}
+.subtitulo-historia-light {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 0;
+}
+
+/* BOTÕES DE ANO */
+.timeline-container {
+    flex-wrap: nowrap; 
+    justify-content: center;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.btn-timeline-year {
+    align-items: center;
+    background-color: var(--cor-primaria-cinzaclaro);
+    border: 1px solid var(--cor-decoracao-laranja);
+    border-radius:0;
+    color: var(--cor-decoracao-laranja);
+    flex-shrink: 0;
+    margin: 0 -1px 0 0;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s, transform 0.5s;
+    z-index: 1;
+}
+
+.timeline-container .btn-timeline-year:first-child {
+    border-radius: 10px 0 0 0;
+}
+.timeline-container .btn-timeline-year.btn-last-year {
+    border-radius: 0 0 10px 0;
+}
+
+.btn.timeline-highlight {
+    overflow: visible; 
+    padding-top: 25px; 
+    position: relative;
+}
+
+.timeline-coroa-icon {
+    height: auto;
+    left: 50%;
+    position: absolute; 
+    top: 9px;
+    transform: translateX(-50%); 
+    width: 25px; 
+    z-index: 10;
+}
+
+.btn-timeline-year:hover {
+    background-color: var(--cor-decoracao-laranja);
+    border-color: var(--cor-decoracao-laranja);
+    color: var(--cor-primaria-cinzaclaro); 
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.prova-social-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%; 
+    justify-content: center !important;
+    min-height: unset !important;
+}
+
+.quem-somos-section .row > .col-lg-6.d-flex {
+    gap: 8px !important;
+    height: auto !important;
+}
+
+
+
+/* === ESTILOS PARA OS MODALS DE PROVA SOCIAL E LINHA DO TEMPO === */
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    display: flex;
+}
+
+/* Estilo do Logo dentro do Modal */
+.modal-logo {
+    height: 80px;
+    margin-right: 15px;
+}
+
+/* Estilo do Título e Subtítulo */
+.modal-title {
+    color: var(--cor-terciaria-cinzaescuro);
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.modal-subtitle-highlight {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--cor-decoracao-laranja);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.modal-paragraph {
+    color: #666;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.modal-logo-light {
+    display: none;
+}
+
+/* Botão de Fechar no Padrão (Ex: cinza escuro) */
+.btn-secondary-fechar {
+    background-color: transparent;
+    border: 2px solid var(--cor-decoracao-laranja);
+    border-radius: 10px 0 10px 0;
+    color: var(--cor-decoracao-laranja);
+    font-weight: 600;
+    padding: 8px 15px;
+    transition: all 0.3s;
+}
+
+.btn-secondary-fechar:hover {
+    background-color: var(--cor-decoracao-laranja) !important;
+    box-shadow: none !important;
+    color: var(--cor-neutra-branco) !important;
+    outline: none !important;
+}
+
+.btn-secondary-fechar:focus,
+.btn-secondary-fechar:active,
+.btn-secondary-fechar:focus:not(:focus-visible) {
+    background-color: var(--cor-decoracao-laranja) !important; 
+    box-shadow: none !important;
+    color: var(--cor-neutra-branco) !important;
+    outline: none !important;
+    transform: scale(1.05);
+}
+
+/* --- AJUSTES DO CONTEÚDO (CAIXA DE DESCRIÇÃO) MVV --- */
+
+.card-mvv {
+    background-color: transparent; 
+    border: none; 
+    border-radius: 10px 0 10px 0; 
+    border: 1px solid #ccc; 
+    box-shadow: none; 
+    padding: 25px; 
+    text-align: left; 
+}
+
+/* --- AJUSTE DA FONTE DA DESCRIÇÃO MVV --- */
+
+.card-mvv {
+    color: var(--cor-terciaria-cinzaescuro);
+    font-size: 1.3rem; 
+    line-height: 1.6;
+}
+
+[data-bs-theme="dark"] .quem-somos-section {
+    background-color: var(--cor-terciaria-cinzaescuro) !important;
+}
+
+[data-bs-theme="dark"] .subtitulo-quem-somos,
+[data-bs-theme="dark"] .subtitulo-destaque,
+[data-bs-theme="dark"] .texto-historia,
+[data-bs-theme="dark"] .quem-somos-intro p,
+[data-bs-theme="dark"] .subtitulo-historia-light {
+    color: var(--cor-primaria-cinzaclaro) !important; 
+}
+
+[data-bs-theme="dark"] .btn-social-proof .descricao-prova {
+    color: var(--cor-primaria-cinzaclaro) !important;
+}
+
+[data-bs-theme="dark"] .btn-mvv {
+    background-color: var(--cor-primaria-cinzaclaro) !important;
+    color: var(--cor-terciaria-cinzaescuro) !important;
+}
+
+[data-bs-theme="dark"] .btn-mvv:hover {
+    background-color: var(--cor-decoracao-laranja) !important;
+    border-color: var(--cor-decoracao-laranja) !important;
+    color: var(--cor-primaria-cinzaclaro) !important; 
+}
+
+[data-bs-theme="dark"] .card-mvv {
+    border: 1px solid var(--cor-primaria-cinzaclaro) !important;
+    color: var(--cor-primaria-cinzaclaro) !important;
+}
+
+/* --- LINHA DO TEMPO --- */
+
+[data-bs-theme="dark"] .btn-timeline-year {
+    background-color: var(--cor-primaria-cinzaclaro) !important;
+    border-color: var(--cor-terciaria-cinzaescuro) !important;
+    color: var(--cor-terciaria-cinzaescuro) !important;
+    
+}
+
+[data-bs-theme="dark"] .btn-timeline-year:hover,
+[data-bs-theme="dark"] .btn-timeline-year:active {
+    background-color: var(--cor-decoracao-laranja) !important; 
+    border-color: var(--cor-decoracao-laranja) !important; 
+    color: var(--cor-primaria-cinzaclaro) !important; 
+    transform: scale(1.05);
+}
+
+[data-bs-theme="dark"] .modal-content {
+    background-color: var(--cor-terciaria-cinzaescuro) !important; 
+    color: var(--cor-primaria-cinzaclaro) !important;
+}
+
+[data-bs-theme="dark"] .modal-header,
+[data-bs-theme="dark"] .modal-footer {
+    border-color: #555 !important;
+}
+
+[data-bs-theme="dark"] .modal-title,
+[data-bs-theme="dark"] .modal-paragraph {
+    color: var(--cor-primaria-cinzaclaro) !important;
+}
+
+[data-bs-theme="dark"] .modal-logo-dark {
+    display: none;
+}
+
+[data-bs-theme="dark"] .modal-logo-light {
+    display: block;
+}
+
+@media (max-width: 991.98px) {
+    .titulo-quem-somos {
+        font-size: 2.2rem;
+    }
+    
+    .subtitulo-destaque {
+        font-size: 1rem;
+    }
+
+    .titulo-historia {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+    
+    .subtitulo-historia-light {
+        font-size: 16px;
+    }
+
+    .prova-social-container {
+        gap: 5px;
+    }
+
+    .btn-mvv {
+        font-size: 16px;
+        margin-left: 0.5%; 
+        margin-right: 0.5%;
+        padding: 10px 8px;
+        width: 32%;
+    }
+
+    .card-mvv {
+        font-size: 1rem;
+        padding: 15px;  
+    }
+
+    .timeline-container {
+        justify-content: flex-start !important;
+        padding-left: 10px;
+        scroll-snap-align: start;
+        scroll-behavior: smooth;
+    }
+
+    .timeline-container .btn-timeline-year:first-child {
+        scroll-snap-align: start;
+    }
+    
+    .numero-prova {
+        font-size: 1.8rem;
+    }
+    .descricao-prova {
+        font-size: 0.8rem;
+    }
+
+    .secao-quem-somos .row .d-flex {
+        padding-left: 5px; 
+        padding-right: 5px;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .quem-somos-section .row > .col-lg-6.d-flex {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+    
+    .col-12.d-flex.justify-content-center.gap-3.mb-3 {
+         flex-wrap: wrap; 
+    }
+    .btn-mvv {
+        width: 48%; 
+    }
+}

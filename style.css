@@ -1,0 +1,135 @@
+@import url(./css/cabecalho.css);
+@import url(./css/banner1.css);
+@import url(./css/produtos.css);
+@import url(./css/prova-social.css);
+@import url(./css/quem-somos.css);
+@import url(./css/form.css);
+@import url(./css/iso-section.css);
+@import url(./css/footer.css);
+@import url(./css/pos-footer.css);
+@import url(./blog/blog.css);
+
+:root {
+    --cor-primaria-cinzaclaro:#E7E5E3;
+    --cor-secundaria-cinzamedio:#606060;
+    --cor-terciaria-cinzaescuro:#2C292A;
+    --cor-decoracao-laranja:#F47C38;
+    --cor-neutra-branco:#FFFFFF;
+    --font-family: "Montserrat", sans-serif;
+}
+
+body {
+    --cor-terciaria-cinzaescuro:#2C292A;
+    --cor-secundaria-cinzamedio:#606060;
+    background-color: var(--cor-primaria-cinzaclaro);
+    box-sizing: border-box;  
+    color: var(--cor-terciaria-cinzaescuro);
+    font-family: var(--font-family);
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+}
+
+input[type=checkbox] {
+  border: 2px solid var(--cor-secundaria-cinzamedio);
+  box-shadow: none;
+}
+
+input[type=checkbox]:checked,
+input[type="checkbox"]:focus {
+  background-color: var(--cor-decoracao-laranja);
+  border-color: var(--cor-decoracao-laranja);
+  box-shadow: none;
+  outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+[data-bs-theme="dark"] {
+    background-color: var(--cor-terciaria-cinzaescuro);
+    color: white;
+    --bs-body-bg: var(--cor-terciaria-cinzaescuro);
+    --bs-body-color: white;
+    --bs-navbar-bg: var(--cor-terciaria-cinzaescuro);
+    --bs-bg-opacity: 1;
+    --bs-nav-link-color: white;
+    --bs-offcanvas-bg: var(--cor-terciaria-cinzaescuro);
+    --bs-offcanvas-color: white;
+}
+
+.navbar-expand-lg[data-bs-theme="dark"] {
+    background-color: var(--cor-terciaria-cinzaescuro) !important;
+}
+
+[data-bs-theme="dark"] .nav-link,
+[data-bs-theme="dark"] .container__botao-cotacao {
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .nav-link:hover {
+    color: var(--cor-decoracao-laranja) !important;
+}
+
+[data-bs-theme="dark"] .container__navbar-imagem img {
+    content: url("./assets/logos/Logo\ -\ Cabeçalho\ -\ 220x110px\ -\ Clara.png");
+}
+
+[data-bs-theme="dark"] {
+    --bs-navbar-bg: var(--cor-secundaria-cinzamedio);
+}
+
+[data-bs-theme="dark"] .navbar-expand-lg {
+    background-color: var(--cor-secundaria-cinzamedio) !important;
+}
+
+[data-bs-theme="dark"] .offcanvas {
+    background-color: var(--cor-secundaria-cinzamedio) !important;
+}
+
+[data-bs-theme="dark"] .container__navbar-imagem img,
+[data-bs-theme="dark"] .offcanvas-title img {
+    content: url("./assets/logos/Logo\ -\ Cabeçalho\ -\ 220x110px\ -\ Clara.png")
+}
+
+[data-bs-theme="dark"] .nav-link:hover {
+    color: #F47C38 !important;
+}
+
+[data-bs-theme="dark"] .nav-link {
+    color: white !important;
+}
+
+[data-bs-theme="dark"] .navbar-expand-lg {
+    background-color: var(--cor-terciaria-cinzaescuro)!important;
+}
+
+[data-bs-theme="dark"] .navbar-nav {
+    background-color: var(--cor-terciaria-cinzaescuro)!important;
+}
+
+.btn-torcisao-dropdown {
+    /* Cor de fundo: Cinza Escuro para aparecer sobre o fundo claro do modal */
+    background-color: var(--cor-decoracao-laranja);
+    border-color: var(--cor-decoracao-laranja);
+    border-radius: 10px 0 10px 0;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-torcisao-dropdown:hover,
+.btn-torcisao-dropdown:focus {
+    /* Hover/Focus: Laranja suave para destaque */
+    background-color: #F47C38;
+    border-color: #F47C38;
+    color: white;
+}
+
+[data-bs-theme="dark"] .offcanvas {
+    background-color: var(--cor-terciaria-cinzaescuro) !important;
+}
+

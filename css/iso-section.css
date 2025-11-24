@@ -1,0 +1,79 @@
+#iso-section {
+    background-color: var(--cor-terciaria-cinzaescuro);
+    margin-top: 120px;
+    min-height: 120px; 
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+}
+
+.iso-banner-wrapper {
+    align-items: center; 
+    background-color: var(--cor-decoracao-laranja); 
+    border-radius: 0 10px 0 10px !important; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: var(--cor-neutra-branco);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 700;
+    justify-content: center;
+    left: 0;
+    margin: 0 auto;
+    max-width: 800px; 
+    min-height: 100px;
+    padding: 10px 20px; 
+    position: absolute;
+    right: 0;
+    text-decoration: none !important;
+    top: 0;
+    transform: translateY(-50%); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iso-banner-wrapper:hover {
+    transform: translateY(-50%) scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    text-decoration: none !important;
+}
+
+.iso-banner-wrapper p {
+    line-height: 1.2;
+    margin: 0 !important;
+}
+
+[data-bs-theme="dark"] #iso-section {
+    background-color: var(--cor-terciaria-cinzaescuro) !important;
+}
+
+[data-bs-theme="dark"] .iso-banner-wrapper {
+    background-color: var(--cor-primaria-cinzaclaro) !important; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7) !important;
+    color: var(--cor-decoracao-laranja) !important;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-bs-theme="dark"] .iso-banner-wrapper:hover {
+    transform: translateY(-50%) scale(1.02); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.85) !important;
+}
+
+[data-bs-theme="dark"] .iso-banner-wrapper p {
+    color: var(--cor-decoracao-laranja) !important;
+}
+
+@media (max-width: 767.98px) {
+    .iso-banner-wrapper {
+        font-size: 1.2rem; 
+        justify-content: center !important; 
+        max-width: 90% !important; 
+        min-height: 80px;
+        padding: 15px 15px;
+        text-align: center !important; 
+    }
+    
+    #iso-section {
+        margin-top: 60px; 
+    }
+}
