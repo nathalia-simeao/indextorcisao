@@ -34,9 +34,9 @@
     border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
     display: inline-block !important;
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
     height: auto !important;
-    padding: 10px 30px !important;
+    padding: 12px 35px !important;
     text-decoration: none !important;
     transition: background-color 0.3s;
     width: auto !important;
