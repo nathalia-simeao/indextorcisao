@@ -1,6 +1,6 @@
 .banner-1-section {
     align-items: center;
-    background: url('../assets/img/Bannner\ 1.png') no-repeat center top/cover;
+    background: url(/assets/bannerhome.png) no-repeat center top/cover;
     background-attachment: fixed;
     display: flex;
     justify-content: center;
