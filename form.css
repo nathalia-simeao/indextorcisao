@@ -60,7 +60,7 @@
 
 /* Estilo do texto placeholder/label quando flutua */
 .form-floating > label {
-    padding: 1rem 0.75rem;
+    padding: 0.8rem 0.75rem !important;
     color: #666;
 }
 
