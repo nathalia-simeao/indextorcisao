@@ -62,32 +62,32 @@ const productData = {
             'btc': {
                 label: 'BTC - Baixo Teor de Carbono',
                 desc: 'Conhecido como "aço comercial", este material essencial, com seu teor variado de carbono, é o padrão da indústria devido à sua notável versatilidade. Ele combina excelente usinabilidade, soldabilidade e forjabilidade, o que simplifica o processamento e a fabricação. É a escolha robusta para inúmeras aplicações que requerem uma boa e confiável resistência mecânica, oferecendo o equilíbrio ideal entre desempenho e facilidade de manipulação.',
-                img: 'assets/barraredonda.jpg'
+                img: './assets/barraredonda.jpg'
             },
             'mtc': {
                 label: 'MTC - Médio Teor de Carbono',
                 desc: 'Conhecido como "aço comercial", este material essencial, com seu teor variado de carbono, é o padrão da indústria devido à sua notável versatilidade. Ele combina excelente usinabilidade, soldabilidade e forjabilidade, o que simplifica o processamento e a fabricação. É a escolha robusta para inúmeras aplicações que requerem uma boa e confiável resistência mecânica, oferecendo o equilíbrio ideal entre desempenho e facilidade de manipulação.',
-                img: 'assets/barraredonda.jpg'
+                img: './assets/barraredonda.jpg'
             },
             'sulfurado': {
                 label: 'Aço Ressulfurado',
                 desc: 'O Aço Ressulfurado é um material de alta usinabilidade, perfeito para produção em larga escala com baixo desgaste de ferramenta...',
-                img: 'assets/barraredonda.jpg'
+                img: './assets/barraredonda.jpg'
             }
         }
     },
     'arames-trefilados': {
         mainName: 'Arames Trefilados',
         variations: {
-            'btc': { label: 'BTC - Baixo Teor de Carbono', desc: 'Descrição do BTC para Arames...', img: 'assets/aramerolo.jpg' },
-            'mtc': { label: 'MTC - Médio Teor de Carbono', desc: 'Descrição do MTC para Arames...', img: 'assets/aramerolo.jpg' },
+            'btc': { label: 'BTC - Baixo Teor de Carbono', desc: 'Descrição do BTC para Arames...', img: './assets/aramerolo.jpg' },
+            'mtc': { label: 'MTC - Médio Teor de Carbono', desc: 'Descrição do MTC para Arames...', img: './assets/aramerolo.jpg' },
         }
     },
     'hastes-aterramento': {
         mainName: 'Haste de Aterramento',
         variations: {
-            'baixa-camada': { label: 'Baixa Camada', desc: 'Descrição da Haste de Baixa Camada...', img: 'assets/hastebaixa.webp' },
-            'alta-camada': { label: 'Alta Camada', desc: 'Descrição da Haste de Alta Camada...', img: 'assets/hastealta.png' },
+            'baixa-camada': { label: 'Baixa Camada', desc: 'Descrição da Haste de Baixa Camada...', img: './assets/hastebaixa.webp' },
+            'alta-camada': { label: 'Alta Camada', desc: 'Descrição da Haste de Alta Camada...', img: './assets/hastealta.png' },
         }
     }
 };
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // 3. Reseta para o estado padrão
         variationDropdownButton.textContent = 'Selecione a Variação';
         productDescriptionDiv.innerHTML = '<p>Selecione uma variação acima para ver a descrição detalhada e a imagem específica.</p>';
-        productImage.src = 'assets/barraredonda.jpg'; // Imagem de placeholder
+        productImage.src = './assets/barraredonda.jpg'; // Imagem de placeholder
     });
 
     // --- 2. FUNÇÃO PARA TROCAR CONTEÚDO E IMAGEM (Clique no Dropdown) ---
