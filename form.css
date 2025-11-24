@@ -60,9 +60,7 @@
     box-shadow: none; 
 }
 
-.form-floating .form-control,
-.form-floating input[type="name"] {
-    /* ... regras existentes ... */
+    .form-floating .form-control {
     background-color: var(--cor-neutra-branco);
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
