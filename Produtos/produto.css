@@ -1,0 +1,244 @@
+:root {
+    --cor-primaria-cinzaclaro:#E7E5E3;
+    --cor-secundaria-cinzamedio:#606060;
+    --cor-terciaria-cinzaescuro:#2C292A;
+    --cor-decoracao-laranja:#F47C38;
+    --cor-neutra-branco:#FFFFFF;
+    --font-family: "Montserrat", sans-serif;
+}
+
+main {
+    padding-top: 120px;
+}
+
+h1.product-main-title {
+    color: var(--cor-decoracao-laranja) !important;
+    font-size: 1.75rem !important;
+}
+
+.product-header-img {
+    border-radius: 0 10px 0 10px;
+    height: 200px;
+    max-width: 400px; 
+    margin-top: -10px;
+    margin-bottom: 20px !important; 
+}
+
+.destaque-card-secundario img.border-radius-especial {
+    border-radius: 0 10px 0 10px;
+    display: block; 
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 65%;
+}
+
+.product-info-cards {
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+
+[data-bs-theme="dark"] h1.product-main-title {
+    color: var(--cor-neutra-branco) !important;
+}
+
+.destaque-card-barras {
+    border: none;
+    border-radius: 0 10px 0 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.destaque-card-barras:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.destaque-card-secundario {
+    border-radius: 0 10px 0 10px; 
+}
+
+.destaque-card-secundario:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+    cursor: default; 
+    transform: translateY(-5px);
+}
+
+/* Título dos Cards */
+.destaque-card-barras .card-title {
+    border-bottom: 2px solid var(--cor-decoracao-laranja);
+    color: var(--cor-decoracao-laranja);
+    font-weight: 700;
+    margin-bottom: 5px; 
+}
+
+.destaque-card-secundario .card-title {
+    color: var(--cor-decoracao-laranja);
+    margin-top: 0; 
+    margin-bottom: 0.5rem;
+}
+
+/* Texto dos Cards */
+.destaque-card-barras .card-text {
+    color: var(--cor-terciaria-cinzaescuro);
+    font-size: 0.95rem;
+    margin-top: 5px;
+    margin-bottom: 0; 
+}
+
+.destaque-card-barras p.card-text ul,
+.destaque-card-barras p.card-text li {
+    color: var(--cor-secundaria-cinzamedio);
+    line-height: 1.4;
+}
+
+.destaque-card-barras p.card-text ul {
+    list-style-type: disc; 
+    margin-left: 1.5rem;
+    margin-top: 5px; 
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.destaque-card-barras p.card-text li strong {
+    color: var(--cor-secundaria-cinzamedio);
+}
+
+[data-bs-theme="dark"] h1.product-main-title {
+    color: var(--cor-primaria-cinzaclaro) !important;
+}
+
+/* --- CARDS DE INFORMAÇÃO (INVERSÃO DE COR) --- */
+
+[data-bs-theme="dark"] .destaque-card-barras {
+    /* CORREÇÃO: Fundo Cinza Escuro */
+    background-color: var(--cor-terciaria-cinzaescuro);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05); /* Sombra mais sutil */
+}
+
+[data-bs-theme="dark"] .destaque-card-barras:hover {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .destaque-card-secundario:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); 
+}
+
+/* Título dos Cards no Dark Mode */
+[data-bs-theme="dark"] .destaque-card-barras .card-title {
+    /* MANTIDO: Cor Laranja */
+    color: var(--cor-decoracao-laranja);
+    /* Borda Laranja */
+    border-bottom-color: var(--cor-decoracao-laranja);
+}
+
+/* Texto dos Cards no Dark Mode (descrição, listas, strong) */
+[data-bs-theme="dark"] .destaque-card-barras .card-text,
+[data-bs-theme="dark"] .destaque-card-barras p.card-text ul,
+[data-bs-theme="dark"] .destaque-card-barras p.card-text li,
+[data-bs-theme="dark"] .destaque-card-barras p.card-text li strong {
+    /* CORREÇÃO: Todos os textos e listas ficam Brancos sobre o fundo escuro */
+    color: var(--cor-neutra-branco) !important; 
+}
+
+.btn-especificacoes-laranja {
+    border-radius: 0 10px 0 10px; 
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: 1px;
+    padding: 20px 140px;
+    transition: all 0.3s ease;
+}
+
+.btn-especificacoes-laranja {
+    background-color: var(--cor-decoracao-laranja);
+    border: 2px solid var(--cor-decoracao-laranja);
+    color: var(--cor-neutra-branco); 
+}
+
+.btn-especificacoes-laranja:hover {
+    background-color: transparent; 
+    border-color: var(--cor-decoracao-laranja);
+    color: var(--cor-decoracao-laranja);
+    transform: translateY(-2px); 
+}
+
+[data-bs-theme="dark"] .btn-especificacoes-laranja {
+    background-color: var(--cor-decoracao-laranja);
+    border-color: var(--cor-decoracao-laranja);
+    color: var(--cor-neutra-branco); 
+}
+
+[data-bs-theme="dark"] .btn-especificacoes-laranja:hover {
+    background-color: transparent; 
+    border-color: var(--cor-decoracao-laranja);
+    color: var(--cor-decoracao-laranja);
+}
+
+.product-diferenciais-section {
+    background-color: var(--cor-terciaria-cinzaescuro); 
+    color: var(--cor-neutra-branco);
+    isolation: isolate; 
+    margin-bottom: 15px;
+}
+
+/* 2. Estilização dos Containers Individuais (Colunas) */
+.product-diferenciais-section .col-md-4,
+.product-diferenciais-section .col-lg-3 {
+    border: 2px solid var(--cor-primaria-cinzaclaro); 
+    border-radius: 0 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 0 5px;
+    padding: 8px 8px;
+}
+
+.product-diferenciais-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* 3. Imagens/Ícones */
+.product-diferenciais-section .diferencial-img {
+    display: block;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+    height: 50px;
+    margin: 5px auto 10px auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50px;
+}
+
+/* 4. Texto (Parágrafos) */
+.product-diferenciais-section p {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    font-weight: 400; 
+    font-size: 18px;
+    justify-content: center; 
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+@media (max-width: 575.98px) { /* Para telas extra-pequenas */
+    .product-diferenciais-section .container {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    /* Reduz o margin-bottom entre os containers quando estiverem empilhados */
+    .product-diferenciais-section .col-12 {
+        margin-bottom: 10px !important; 
+    }
+
+    .btn-especificacoes-laranja {
+        max-width: 300px;
+        padding: 12px 0; 
+        width: 90%; 
+}
+}
