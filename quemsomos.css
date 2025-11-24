@@ -28,7 +28,7 @@
 }
 
 /* BOTÃO DE COTAÇÃO */
-.btn-torcisao-laranja {
+.btn-especificacoes-laranja {
     background-color: var(--cor-decoracao-laranja);
     border: none;
     border-radius: 0 10px 0 10px;
@@ -36,7 +36,7 @@
     padding: 10px 20px;
     transition: background-color 0.3s;
 }
-.btn-torcisao-laranja:hover {
+.btn-especificacoes-laranja:hover {
     background-color: transparent;
     border: 2px solid #F47C38;
     color: #F47C38;
