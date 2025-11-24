@@ -94,6 +94,22 @@
     padding: 1rem 0.75rem !important;
 }
 
+.btn-torcisao-form {
+    background-color: var(--cor-decoracao-laranja);
+    border: none;
+    border-radius: 0 10px 0 10px;
+    color: var(--cor-neutra-branco);
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+.btn-torcisao-form:hover {
+    background-color: transparent !important; 
+    border: 2px solid var(--cor-decoracao-laranja) !important;
+    color: var(--cor-decoracao-laranja);
+    text-decoration: none;
+}
+
 /* --- FORMULÁRIO DARK MODE (CÓDIGO CORRIGIDO) --- */
 
 [data-bs-theme="dark"] .form-wrapper {
