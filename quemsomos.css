@@ -31,7 +31,7 @@
 .btn-torcisao-laranja {
     background-color: var(--cor-decoracao-laranja);
     border: none;
-    border-radius: 10px 0 10px 0;
+    border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
     padding: 10px 20px;
     transition: background-color 0.3s;
@@ -46,7 +46,7 @@
 .btn-social-proof {
     background-color: transparent;
     border: 2px solid var(--cor-decoracao-laranja);
-    border-radius: 10px 0 10px 0;
+    border-radius: 0 10px 0 10px;
     color: var(--cor-decoracao-laranja);
     display: flex;
     flex-direction: column;
