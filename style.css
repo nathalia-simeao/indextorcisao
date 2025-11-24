@@ -75,7 +75,7 @@ html {
 }
 
 [data-bs-theme="dark"] .container__navbar-imagem img {
-    content: url("./assets/lgcabecalhoclara220.png");
+    content: url(assets/lgcabecalhoclara220.png);
 }
 
 [data-bs-theme="dark"] {
@@ -92,7 +92,7 @@ html {
 
 [data-bs-theme="dark"] .container__navbar-imagem img,
 [data-bs-theme="dark"] .offcanvas-title img {
-    content: url("./assets/lgcabecalhoclara220.png")
+    content: url(assets/lgcabecalhoclara220.png)
 }
 
 [data-bs-theme="dark"] .nav-link:hover {
