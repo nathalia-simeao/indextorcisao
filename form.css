@@ -47,27 +47,14 @@
     margin-bottom: 1rem !important;
 }
 
-.form-floating .form-control,
-.form-floating input[type="tel"] {
-    /* ... regras existentes ... */
+.form-floating .form-control {
     background-color: var(--cor-neutra-branco);
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
-    height: calc(3.5rem + 2px) !important; 
-    padding-top: 1.625rem !important;
-    padding-bottom: 0.625rem !important;
-    box-shadow: none; 
-}
-
-    .form-floating .form-control {
-    background-color: var(--cor-neutra-branco);
-    border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
-    border-radius: 5px;
-    color: var(--cor-terciaria-cinzaescuro);
-    height: calc(3.5rem + 2px) !important; 
-    padding-top: 1.625rem !important;
-    padding-bottom: 0.625rem !important;
+    height: calc(3.5rem + 2px) !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 0.5rem !important;
     box-shadow: none; 
 }
 
