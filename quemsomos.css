@@ -34,13 +34,13 @@
     border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
     display: inline-block !important;
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     height: auto !important;
-    padding: 10px 35px !important;
+    padding: 12px 35px !important;
     text-decoration: none !important;
     transition: background-color 0.3s;
     width: auto !important;
-    white-space: nowrap;
+    white-space: nowrap !important;
 }
 
 .btn-especificacoes-laranja:hover {
