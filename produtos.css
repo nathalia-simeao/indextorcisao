@@ -116,9 +116,10 @@
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
+    max-width: 250px !important;
     padding: 6px 14px;
     transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
-    width: auto !important;
+    width: 100% !important;
 }
 
 .btn-fechar-modal:hover,
