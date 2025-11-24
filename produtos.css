@@ -112,10 +112,10 @@
     border-color: var(--cor-secundaria-cinzamedio); 
     border-radius: 0 10px 0 10px;
     color: var(--cor-neutra-branco);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    padding: 8px 20px;
+    padding: 6px 14px;
     transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
 }
 
