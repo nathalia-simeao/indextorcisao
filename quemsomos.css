@@ -424,3 +424,15 @@
         width: 48%; 
     }
 }
+
+/* Section-specific override: keep the 'Solicite sua cotação' button in the Quem Somos
+   section compact and readable (product pages use a larger version). This selector is
+   intentionally more specific so it wins over .btn-especificacoes-laranja defined
+   later in produto.css. */
+.secao-quem-somos .btn-especificacoes-laranja {
+    font-size: 1.1rem; /* restore smaller size for the intro CTA */
+    padding: 12px 30px; /* balanced inner padding */
+    display: inline-block !important;
+    width: auto !important;
+    white-space: nowrap !important;
+}

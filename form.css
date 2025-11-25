@@ -1,6 +1,7 @@
 /* --- ESTILOS GERAIS DA SEÇÃO FORMULÁRIO --- */
 .form-section {
-    background-image: url(/assets/bannerform.png);
+    /* Use project-relative path (no leading slash). Leading "/" can break local file:// and some dev server setups. */
+    background-image: url(assets/bannerform.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -53,15 +54,25 @@
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
     height: calc(3.5rem + 2px) !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 0.5rem !important;
+    /* Use full padding (top/right/bottom/left) so text & floating label align correctly */
+    padding: 1rem 0.75rem !important;
+    box-sizing: border-box; /* ensures padding doesn't break sizing */
     box-shadow: none; 
 }
 
 /* Estilo do texto placeholder/label quando flutua */
 .form-floating > label {
+    /* Keep label readable and aligned with the control. Bootstrap normally positions the label;
+       this ensures the padding matches the control and the label is consistent across themes. */
     padding: 0.8rem 0.75rem !important;
     color: #666;
+    pointer-events: none;
+}
+
+/* Hide the placeholder text when the input has content or is focused so it does not overlap the floating label */
+.form-floating .form-control:focus::placeholder,
+.form-floating .form-control:not(:placeholder-shown)::placeholder {
+    opacity: 0 !important;
 }
 
 /* --- TEXTO DA POLÍTICA DE PRIVACIDADE --- */
