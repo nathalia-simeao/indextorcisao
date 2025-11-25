@@ -46,9 +46,10 @@
 /* --- CAMPO FLOATING LABEL (Para o visual da imagem) --- */
 .form-floating {
     margin-bottom: 0.5rem !important;
+    background-color: transparent!important;
 }
 
-.form-floating .form-control {
+.form-control {
     background-color: var(--cor-neutra-branco);
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
