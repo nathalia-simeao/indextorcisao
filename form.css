@@ -53,9 +53,11 @@
 }
 
 /* --- CAMPO FLOATING LABEL (Para o visual da imagem) --- */
+/* Make sure the floating container is positioned for absolute labels */
 .form-floating {
-    margin-bottom: 0.5rem !important;
-    background-color: transparent!important;
+    margin-bottom: 0.75rem !important;
+    background-color: transparent !important;
+    position: relative; /* required for absolute-positioned label */
 }
 
 .form-control {
@@ -63,26 +65,52 @@
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
-    height: calc(4rem + 2px) !important;
-    /* Use full padding (top/right/bottom/left) so text & floating label align correctly */
-    padding: 1rem 0.75rem !important;
+    /* let inputs size naturally instead of forcing a large fixed height */
+    height: auto !important;
+    min-height: 3.5rem; /* reasonable minimum on desktop */
+    line-height: 1.25;
+    padding: 1rem 0.75rem !important; /* ensures space for labels */
+    font-size: 1rem; /* increase font size for readability */
     box-sizing: border-box; /* ensures padding doesn't break sizing */
-    box-shadow: none; 
+    box-shadow: none;
 }
 
 /* Estilo do texto placeholder/label quando flutua */
 .form-floating > label {
-    /* Keep label readable and aligned with the control. Bootstrap normally positions the label;
-       this ensures the padding matches the control and the label is consistent across themes. */
-    padding: 0.8rem 0.75rem !important;
+    /* Floating label: placed absolutely inside the form control area */
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 150ms ease-in-out;
+    font-size: 0.95rem; /* slightly larger label on desktop */
     color: #666;
     pointer-events: none;
+    z-index: 2;
+    background: transparent;
+    padding: 0 .25rem; /* small padding so background (when added) looks natural */
 }
 
 /* Hide the placeholder text when the input has content or is focused so it does not overlap the floating label */
 .form-floating .form-control:focus::placeholder,
 .form-floating .form-control:not(:placeholder-shown)::placeholder {
     opacity: 0 !important;
+}
+
+/* When input is focused or not empty, float the label upward and make it sit outside the input border */
+.form-floating .form-control:focus + label,
+.form-floating .form-control:not(:placeholder-shown) + label {
+    transform: translateY(-145%); /* move label above the top border */
+    font-size: 0.825rem;
+    background: var(--cor-neutra-branco); /* visually separate label from the border */
+    padding: 0 .4rem;
+    left: 0.65rem; /* slight nudge so it sits aligned */
+}
+
+/* dark mode: label background should match dark wrapper while floated */
+[data-bs-theme="dark"] .form-floating .form-control:focus + label,
+[data-bs-theme="dark"] .form-floating .form-control:not(:placeholder-shown) + label {
+    background: var(--cor-terciaria-cinzaescuro) !important;
 }
 
 /* Ensure placeholder backgrounds are transparent in all browsers so the placeholder text
