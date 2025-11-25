@@ -31,21 +31,13 @@
     padding-left: 20px;
     position: relative;
     text-align: left;
-    width: 100%;
-    z-index: 3;
-}
-
-.banner-1-content {
-    max-width: 800px;
-    position: relative;
-    z-index: 2;
-}
-
-.banner-1-content {
     color: white;
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 10px;
+    max-width: 800px;
+    width: 100%;
+    z-index: 3;
 }
 
 .banner-1-title {
