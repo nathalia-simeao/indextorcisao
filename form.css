@@ -1,7 +1,13 @@
 /* --- ESTILOS GERAIS DA SEÇÃO FORMULÁRIO --- */
 .form-section {
-    /* Use project-relative path (no leading slash). Leading "/" can break local file:// and some dev server setups. */
-    background-image: url(/assets/bannerform.png);
+     /* Use multiple fallbacks so the form banner loads in local or varied deploy setups.
+         First try a path relative to the CSS file, then a couple of fallbacks for different bases. */
+     background-image: url('./assets/bannerform.png'), url('assets/bannerform.png'), url('../assets/bannerform.png');
+     background-repeat: no-repeat;
+     background-position: center center;
+     /* Ensure there's visible area for the banner — padding alone can collapse visuals depending on layout |
+         set a modest min-height so the background shows on small screens as well. */
+     min-height: 300px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -76,6 +82,17 @@
     opacity: 0 !important;
 }
 
+/* Ensure placeholder backgrounds are transparent in all browsers so the placeholder text
+   never covers or visually blocks the input's border or background.
+   Add vendor-prefixed selectors for broader compatibility. */
+.form-floating .form-control::placeholder,
+.form-floating .form-control::-webkit-input-placeholder,
+.form-floating .form-control::-moz-placeholder,
+.form-floating .form-control:-ms-input-placeholder,
+.form-floating .form-control::-ms-input-placeholder {
+    background-color: transparent !important;
+}
+
 /* --- TEXTO DA POLÍTICA DE PRIVACIDADE --- */
 .politica-link {
     color: var(--cor-decoracao-laranja);
@@ -146,6 +163,15 @@
 [data-bs-theme="dark"] .form-floating .form-control::placeholder {
     color: var(--cor-primaria-cinzaclaro) !important; /* Cor do placeholder quando visível */
     opacity: 0.7 !important; /* Opcional: uma leve transparência */
+}
+
+/* dark-mode: make sure placeholder background is also transparent */
+[data-bs-theme="dark"] .form-floating .form-control::placeholder,
+[data-bs-theme="dark"] .form-floating .form-control::-webkit-input-placeholder,
+[data-bs-theme="dark"] .form-floating .form-control::-moz-placeholder,
+[data-bs-theme="dark"] .form-floating .form-control:-ms-input-placeholder,
+[data-bs-theme="dark"] .form-floating .form-control::-ms-input-placeholder {
+    background-color: transparent !important;
 }
 
 
