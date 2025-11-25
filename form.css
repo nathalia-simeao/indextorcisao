@@ -1,7 +1,7 @@
 /* --- ESTILOS GERAIS DA SEÇÃO FORMULÁRIO --- */
 .form-section {
     /* Use project-relative path (no leading slash). Leading "/" can break local file:// and some dev server setups. */
-    background-image: url(assets/bannerform.png);
+    background-image: url(/assets/bannerform.png);
     background-size: cover;
     background-position: center;
     overflow: hidden;
