@@ -60,7 +60,7 @@
     border: 1px solid var(--cor-secundaria-cinzamedio, #A9A9A9);
     border-radius: 5px;
     color: var(--cor-terciaria-cinzaescuro);
-    height: calc(3.5rem + 2px) !important;
+    height: calc(5rem + 2px) !important;
     /* Use full padding (top/right/bottom/left) so text & floating label align correctly */
     padding: 1rem 0.75rem !important;
     box-sizing: border-box; /* ensures padding doesn't break sizing */
