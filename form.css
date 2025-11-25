@@ -45,7 +45,7 @@
 
 /* --- CAMPO FLOATING LABEL (Para o visual da imagem) --- */
 .form-floating {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.5rem !important;
 }
 
 .form-floating .form-control {
