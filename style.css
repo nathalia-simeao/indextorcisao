@@ -1,13 +1,16 @@
-@import url(./css/cabecalho.css);
-@import url(./css/banner1.css);
-@import url(./css/produtos.css);
-@import url(./css/prova-social.css);
-@import url(./css/quem-somos.css);
-@import url(./css/form.css);
-@import url(./css/iso-section.css);
-@import url(./css/footer.css);
-@import url(./css/pos-footer.css);
-@import url(./blog/blog.css);
+@import url(cabecalho.css);
+@import url(banner1.css);
+@import url(produtos.css);
+@import url(provasocial.css);
+@import url(quemsomos.css);
+@import url(form.css);
+@import url(isosection.css);
+@import url(footer.css);
+@import url(posfooter.css);
+@import url(blog.css);
+@import url(produto.css);
+@import url(institucional.css);
+
 
 :root {
     --cor-primaria-cinzaclaro:#E7E5E3;
@@ -49,20 +52,16 @@ html {
     scroll-behavior: smooth;
 }
 
+/* --- Dark Mode Theme --- */
 [data-bs-theme="dark"] {
     background-color: var(--cor-terciaria-cinzaescuro);
     color: white;
     --bs-body-bg: var(--cor-terciaria-cinzaescuro);
     --bs-body-color: white;
-    --bs-navbar-bg: var(--cor-terciaria-cinzaescuro);
     --bs-bg-opacity: 1;
     --bs-nav-link-color: white;
     --bs-offcanvas-bg: var(--cor-terciaria-cinzaescuro);
     --bs-offcanvas-color: white;
-}
-
-.navbar-expand-lg[data-bs-theme="dark"] {
-    background-color: var(--cor-terciaria-cinzaescuro) !important;
 }
 
 [data-bs-theme="dark"] .nav-link,
@@ -71,23 +70,11 @@ html {
 }
 
 [data-bs-theme="dark"] .nav-link:hover {
-    color: var(--cor-decoracao-laranja) !important;
-}
-
-[data-bs-theme="dark"] .container__navbar-imagem img {
-    content: url(assets/lgcabecalhoclara220.png);
-}
-
-[data-bs-theme="dark"] {
-    --bs-navbar-bg: var(--cor-secundaria-cinzamedio);
+    color: #F47C38 !important;
 }
 
 [data-bs-theme="dark"] .navbar-expand-lg {
-    background-color: var(--cor-secundaria-cinzamedio) !important;
-}
-
-[data-bs-theme="dark"] .offcanvas {
-    background-color: var(--cor-secundaria-cinzamedio) !important;
+    background-color: var(--cor-terciaria-cinzaescuro) !important;
 }
 
 [data-bs-theme="dark"] .container__navbar-imagem img,
@@ -95,24 +82,12 @@ html {
     content: url(assets/lgcabecalhoclara220.png)
 }
 
-[data-bs-theme="dark"] .nav-link:hover {
-    color: #F47C38 !important;
-}
-
-[data-bs-theme="dark"] .nav-link {
-    color: white !important;
-}
-
-[data-bs-theme="dark"] .navbar-expand-lg {
-    background-color: var(--cor-terciaria-cinzaescuro)!important;
-}
-
 [data-bs-theme="dark"] .navbar-nav {
     background-color: var(--cor-terciaria-cinzaescuro)!important;
 }
 
+/* --- Dropdown Button --- */
 .btn-torcisao-dropdown {
-    /* Cor de fundo: Cinza Escuro para aparecer sobre o fundo claro do modal */
     background-color: var(--cor-decoracao-laranja);
     border-color: var(--cor-decoracao-laranja);
     border-radius: 10px 0 10px 0;
@@ -123,13 +98,7 @@ html {
 
 .btn-torcisao-dropdown:hover,
 .btn-torcisao-dropdown:focus {
-    /* Hover/Focus: Laranja suave para destaque */
     background-color: #F47C38;
     border-color: #F47C38;
     color: white;
 }
-
-[data-bs-theme="dark"] .offcanvas {
-    background-color: var(--cor-terciaria-cinzaescuro) !important;
-}
-
