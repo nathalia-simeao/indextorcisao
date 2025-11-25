@@ -2,10 +2,12 @@
 const inputCheck = document.querySelector('#modo-noturno');
 const elemento = document.querySelector('body');
 
-inputCheck.addEventListener('click', () => {
-    const modo = inputCheck.checked ? 'dark' : 'light';
-    elemento.setAttribute("data-bs-theme", modo);
-});
+if (inputCheck) {
+    inputCheck.addEventListener('click', () => {
+        const modo = inputCheck.checked ? 'dark' : 'light';
+        elemento.setAttribute("data-bs-theme", modo);
+    });
+}
 
 // --- 2. CORREÇÃO DA FUNCIONALIDADE MULTINÍVEL (NÍVEL 2) ---
 document.addEventListener('DOMContentLoaded', function () {
@@ -27,15 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 submenu.classList.add('collapse');
                 submenu.classList.remove('dropdown-menu'); // Remove classe que conflita com visual
 
-                // 3. ATRIBUI ATRIBUTOS DE CONTROLE (targeta a ID)
+                // 3. PREVINE COMPORTAMENTO ANTIGO (Dropdown): remove atributos antigos primeiro
+                toggle.removeAttribute('data-bs-toggle');
+                toggle.removeAttribute('data-bs-target');
+
+                // 4. ATRIBUI ATRIBUTOS DE CONTROLE (aponta para o ID do submenu)
                 toggle.setAttribute('data-bs-toggle', 'collapse');
                 toggle.setAttribute('data-bs-target', '#' + uniqueId); // Usa o ID corrigido
                 toggle.setAttribute('aria-controls', uniqueId);
                 toggle.setAttribute('aria-expanded', 'false');
-                
-                // 4. PREVINE COMPORTAMENTO ANTIGO (Dropdown) e usa o handler do Bootstrap
-                toggle.removeAttribute('data-bs-toggle'); // Remove o antigo atributo data-bs-toggle="dropdown"
-                toggle.removeAttribute('data-bs-target'); // Remove o antigo atributo que causava erro
                 
                 // 5. EVENTO DE CLIQUE: Usa o método nativo do Bootstrap (Collapse)
                 toggle.addEventListener('click', function (e) {
@@ -103,11 +105,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const modalTitle = document.getElementById('produtoModalLabel');
 
     let currentProductData = null;
+    let currentProductKey = null; // guarda a chave do produto atual (ex: 'barras-trefiladas')
 
     // --- 1. FUNÇÃO DE INICIALIZAÇÃO DO MODAL ---
     produtoModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
         const productKey = button.getAttribute('data-product-key');
+        currentProductKey = productKey;
         currentProductData = productData[productKey];
 
         if (!currentProductData) return;
@@ -150,37 +154,52 @@ document.addEventListener('DOMContentLoaded', function () {
             // Fecha o menu Dropdown após a seleção
             const dropdown = bootstrap.Dropdown.getInstance(variationDropdownButton);
             if(dropdown) dropdown.hide();
+
+            // Atualiza o link do botão "Ver detalhes" para levar à página correta
+            const btnVerDetalhes = document.getElementById('btnVerDetalhes');
+            if (btnVerDetalhes && currentProductKey && productMap[currentProductKey] && productMap[currentProductKey][variationKey]) {
+                btnVerDetalhes.href = productMap[currentProductKey][variationKey];
+                btnVerDetalhes.style.display = 'inline-block';
+            }
         }
     });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    var offcanvasElement = document.getElementById('seuOffcanvasID'); // Mude para o ID do seu Offcanvas
-    
-    // Observa os eventos dentro do Offcanvas
-    offcanvasElement.addEventListener('shown.bs.collapse', function (e) {
-        var currentCollapse = e.target;
-        
-        // Encontra todos os outros elementos de collapse (submenus)
-        var allCollapses = offcanvasElement.querySelectorAll('.collapse.show');
-        
-        allCollapses.forEach(function (collapse) {
-            // Fecha todos os outros, exceto o que acabou de ser aberto
-            if (collapse !== currentCollapse) {
-                var collapseInstance = bootstrap.Collapse.getInstance(collapse);
-                if (collapseInstance) {
-                    collapseInstance.hide();
+    // O ID real do offcanvas no HTML é 'offcanvasNavbar' — procura por ambos e protege
+    var offcanvasElement = document.getElementById('offcanvasNavbar') || document.getElementById('seuOffcanvasID');
+
+    // Observa os eventos dentro do Offcanvas se existir
+    if (offcanvasElement) {
+        offcanvasElement.addEventListener('shown.bs.collapse', function (e) {
+            var currentCollapse = e.target;
+
+            // Encontra todos os outros elementos de collapse (submenus)
+            var allCollapses = offcanvasElement.querySelectorAll('.collapse.show');
+
+            allCollapses.forEach(function (collapse) {
+                // Fecha todos os outros, exceto o que acabou de ser aberto
+                if (collapse !== currentCollapse) {
+                    var collapseInstance = bootstrap.Collapse.getInstance(collapse);
+                    if (collapseInstance) {
+                        collapseInstance.hide();
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 });
 
-document.querySelectorAll('.btn-mvv').forEach(button => {
-    button.addEventListener('click', function() {
-        document.querySelectorAll('.btn-mvv').forEach(btn => btn.classList.remove('active-mvv'));
-        this.classList.add('active-mvv');
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    const mvvButtons = document.querySelectorAll('.btn-mvv');
+    if (mvvButtons && mvvButtons.length) {
+        mvvButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.btn-mvv').forEach(btn => btn.classList.remove('active-mvv'));
+                this.classList.add('active-mvv');
+            });
+        });
+    }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -227,10 +246,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Mapeamento de chaves (data-product-key) para nomes de arquivo (href)
 const productMap = {
-    'barras-trefiladas': 'barrasbtc.html',
-    'hastes-aterramento': 'hastes.html',
-    'arames-trefilados': 'arames.html'
-    // Adicione outros produtos conforme necessário
+    'barras-trefiladas': {
+        'btc': 'barrabtc.html',
+        'mtc': 'barramtc.html',
+        'sulfurado': 'barraacoressulfurado.html'
+    },
+    'arames-trefilados': {
+        'btc': 'aramebtc.html',
+        'mtc': 'aramemtc.html'
+    },
+    'hastes-aterramento': {
+        'baixa-camada': 'hastebc.html',
+        'alta-camada': 'hasteac.html'
+    }
+    // Adicione outras variações se necessário
 };
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -245,16 +274,20 @@ document.addEventListener('DOMContentLoaded', function () {
             // Pega a chave do produto (ex: 'barras-trefiladas')
             const productKey = button.getAttribute('data-product-key');
             
-            // Pega o nome do arquivo correspondente
-            const filename = productMap[productKey];
+            // Pega o nome do arquivo correspondente (usa a primeira variação disponível como padrão)
+            let filename = null;
+            if (productMap[productKey]) {
+                const keys = Object.keys(productMap[productKey]);
+                if (keys.length) filename = productMap[productKey][keys[0]];
+            }
 
-            if (filename) {
-                // Define o link e torna o botão visível
-                btnVerDetalhes.href = filename;
-                btnVerDetalhes.style.display = 'inline-block';
-            } else {
-                // Se o produto não estiver mapeado, esconde o botão
-                btnVerDetalhes.style.display = 'none';
+            if (btnVerDetalhes) {
+                if (filename) {
+                    btnVerDetalhes.href = filename;
+                    btnVerDetalhes.style.display = 'inline-block';
+                } else {
+                    btnVerDetalhes.style.display = 'none';
+                }
             }
         });
 
@@ -429,8 +462,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //Mascara de número de telefone
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o campo de telefone pelo ID
-    const telefoneInput = $('#form-telefone');
+    // Seleciona o campo de telefone pelo ID (usa jQuery se disponível)
+    const telefoneInputElem = document.getElementById('form-telefone');
+    const telefoneInput = (typeof $ === 'function' && $('#form-telefone').length) ? $('#form-telefone') : null;
 
     // Define a função de máscara dinâmica
     var SPMaskBehavior = function (val) {
@@ -443,6 +477,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Aplica a máscara dinâmica
-    telefoneInput.mask(SPMaskBehavior, spOptions);
+    // Aplica a máscara dinâmica somente se encontrou o elemento e o plugin jQuery Mask
+    if (telefoneInput && typeof telefoneInput.mask === 'function') {
+        telefoneInput.mask(SPMaskBehavior, spOptions);
+    } else if (telefoneInputElem) {
+        // Fallback leve: impede caracteres não numéricos (não aplica máscara visual)
+        telefoneInputElem.addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9()\-\s]/g, '');
+        });
+    }
 });
