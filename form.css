@@ -52,12 +52,15 @@
 
 }
 
-/* --- CAMPO FLOATING LABEL (Para o visual da imagem) --- */
-/* Make sure the floating container is positioned for absolute labels */
-.form-floating {
-    margin-bottom: 0.75rem !important;
-    background-color: transparent !important;
-    position: relative; /* required for absolute-positioned label */
+/* --- FORM GROUP / LABEL (label above inputs) --- */
+.mb-3 { margin-bottom: 0.75rem !important; }
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #666;
+    font-size: 0.95rem;
 }
 
 .form-control {
@@ -76,51 +79,28 @@
 }
 
 /* Estilo do texto placeholder/label quando flutua */
-.form-floating > label {
-    /* Floating label: placed absolutely inside the form control area */
-    position: absolute;
-    left: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: all 150ms ease-in-out;
-    font-size: 0.95rem; /* slightly larger label on desktop */
-    color: #666;
-    pointer-events: none;
-    z-index: 2;
-    background: transparent;
-    padding: 0 .25rem; /* small padding so background (when added) looks natural */
-}
 
 /* Hide the placeholder text when the input has content or is focused so it does not overlap the floating label */
-.form-floating .form-control:focus::placeholder,
-.form-floating .form-control:not(:placeholder-shown)::placeholder {
+/* Keep placeholder hidden when focused or filled (safe fallback) */
+.form-control:focus::placeholder,
+.form-control:not(:placeholder-shown)::placeholder {
     opacity: 0 !important;
 }
 
 /* When input is focused or not empty, float the label upward and make it sit outside the input border */
-.form-floating .form-control:focus + label,
-.form-floating .form-control:not(:placeholder-shown) + label {
-    transform: translateY(-145%); /* move label above the top border */
-    font-size: 0.825rem;
-    background: var(--cor-neutra-branco); /* visually separate label from the border */
-    padding: 0 .4rem;
-    left: 0.65rem; /* slight nudge so it sits aligned */
-}
-
-/* dark mode: label background should match dark wrapper while floated */
-[data-bs-theme="dark"] .form-floating .form-control:focus + label,
-[data-bs-theme="dark"] .form-floating .form-control:not(:placeholder-shown) + label {
-    background: var(--cor-terciaria-cinzaescuro) !important;
+/* Labels are static above inputs; in dark mode color should be readable */
+[data-bs-theme="dark"] .form-label {
+    color: var(--cor-primaria-cinzaclaro) !important;
 }
 
 /* Ensure placeholder backgrounds are transparent in all browsers so the placeholder text
    never covers or visually blocks the input's border or background.
    Add vendor-prefixed selectors for broader compatibility. */
-.form-floating .form-control::placeholder,
-.form-floating .form-control::-webkit-input-placeholder,
-.form-floating .form-control::-moz-placeholder,
-.form-floating .form-control:-ms-input-placeholder,
-.form-floating .form-control::-ms-input-placeholder {
+.form-control::placeholder,
+.form-control::-webkit-input-placeholder,
+.form-control::-moz-placeholder,
+.form-control:-ms-input-placeholder,
+.form-control::-ms-input-placeholder {
     background-color: transparent !important;
 }
 
@@ -135,8 +115,9 @@
     text-decoration: underline;
 }
 
-.form-floating > label[for="form-telefone"] {
-    padding: 1rem 0.75rem !important;
+.form-label[for="form-telefone"] {
+    /* keep phone label spacing consistent */
+    margin-bottom: 0.5rem !important;
 }
 
 .btn-torcisao-form {
@@ -167,8 +148,8 @@
 }
 
 /* 1. INPUTS (Aceita o fundo escuro e força o texto claro) */
-[data-bs-theme="dark"] .form-floating .form-control,
-[data-bs-theme="dark"] .form-floating .form-control:-webkit-autofill {
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-control:-webkit-autofill {
     background-color: var(--cor-terciaria-cinzaescuro) !important; 
     color: var(--cor-primaria-cinzaclaro) !important; 
     -webkit-text-fill-color: var(--cor-primaria-cinzaclaro) !important;
@@ -177,31 +158,30 @@
 }
 
 /* 2. LABELS E PLACEHOLDERS */
-[data-bs-theme="dark"] .form-floating > label,
-[data-bs-theme="dark"] .form-floating>.form-control:focus~label, 
-[data-bs-theme="dark"] .form-floating>.form-control:not(:placeholder-shown)~label {
+[data-bs-theme="dark"] .form-label,
+[data-bs-theme="dark"] .form-control:focus ~ .form-label {
     color: var(--cor-primaria-cinzaclaro) !important;
     opacity: 1 !important; 
 }
 
 /* 🚨 3. CORREÇÃO DE DUPLICIDADE: Esconde o placeholder quando o label está flutuando */
-[data-bs-theme="dark"] .form-floating .form-control:focus::placeholder, /* Quando em foco */
-[data-bs-theme="dark"] .form-floating .form-control:not(:placeholder-shown)::placeholder { /* Quando há texto */
+[data-bs-theme="dark"] .form-control:focus::placeholder, /* Quando em foco */
+[data-bs-theme="dark"] .form-control:not(:placeholder-shown)::placeholder { /* Quando há texto */
     opacity: 0 !important; /* Torna o placeholder invisível */
 }
 
 /* E define a cor do placeholder quando ele está visível (campo vazio) */
-[data-bs-theme="dark"] .form-floating .form-control::placeholder {
+[data-bs-theme="dark"] .form-control::placeholder {
     color: var(--cor-primaria-cinzaclaro) !important; /* Cor do placeholder quando visível */
     opacity: 0.7 !important; /* Opcional: uma leve transparência */
 }
 
 /* dark-mode: make sure placeholder background is also transparent */
-[data-bs-theme="dark"] .form-floating .form-control::placeholder,
-[data-bs-theme="dark"] .form-floating .form-control::-webkit-input-placeholder,
-[data-bs-theme="dark"] .form-floating .form-control::-moz-placeholder,
-[data-bs-theme="dark"] .form-floating .form-control:-ms-input-placeholder,
-[data-bs-theme="dark"] .form-floating .form-control::-ms-input-placeholder {
+[data-bs-theme="dark"] .form-control::placeholder,
+[data-bs-theme="dark"] .form-control::-webkit-input-placeholder,
+[data-bs-theme="dark"] .form-control::-moz-placeholder,
+[data-bs-theme="dark"] .form-control:-ms-input-placeholder,
+[data-bs-theme="dark"] .form-control::-ms-input-placeholder {
     background-color: transparent !important;
 }
 
