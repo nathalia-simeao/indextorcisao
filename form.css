@@ -2,7 +2,10 @@
 .form-section {
      /* Use multiple fallbacks so the form banner loads in local or varied deploy setups.
          First try a path relative to the CSS file, then a couple of fallbacks for different bases. */
-     background-image: url('./assets/bannerform.png'), url('assets/bannerform.png'), url('../assets/bannerform.png');
+      /* Try a different existing asset (bannerhome.png) to test if the form banner loads correctly.
+          Keep the previous bannerform fallbacks afterwards so we can confirm whether the issue
+          is the image file itself. */
+      background-image: url('./assets/bannerhome.png'), url('assets/bannerhome.png'), url('./assets/bannerform.png'), url('assets/bannerform.png'), url('../assets/bannerform.png');
      background-repeat: no-repeat;
      background-position: center center;
      /* Ensure there's visible area for the banner — padding alone can collapse visuals depending on layout |
