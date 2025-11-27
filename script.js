@@ -1,8 +1,8 @@
 // Lógica para o Modo Noturno - Executada Imediatamente
-const modoNoturnoSwitch = document.getElementById('modo-noturno');
 
 // Função para aplicar o tema (claro ou escuro)
 const aplicarTema = () => {
+    const modoNoturnoSwitch = document.getElementById('modo-noturno');
     // Verifica se o tema 'dark' está salvo no localStorage
     if (localStorage.getItem('theme') === 'dark') {
         document.documentElement.setAttribute('data-bs-theme', 'dark'); // Aplica o tema escuro
