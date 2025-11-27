@@ -83,4 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
             btnVerDetalhes.style.display = 'block'; // Mostra o botão "Ver Detalhes"
         }
     });
+
+    // Lógica para o Modo Noturno
+    const modoNoturnoSwitch = document.getElementById('modo-noturno');
+    
+    // Função para aplicar o tema (claro ou escuro)
+    const aplicarTema = () => {
+        // Verifica se o tema 'dark' está salvo no localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.setAttribute('data-bs-theme', 'dark'); // Aplica o tema escuro
+            if (modoNoturnoSwitch) modoNoturnoSwitch.checked = true; // Marca o switch
+        } else {
+            document.body.setAttribute('data-bs-theme', 'light'); // Aplica o tema claro
+            if (modoNoturnoSwitch) modoNoturnoSwitch.checked = false; // Desmarca o switch
+        }
+    };
+
+    // Adiciona um listener para o switch de modo noturno
+    if (modoNoturnoSwitch) {
+        modoNoturnoSwitch.addEventListener('change', () => {
+            localStorage.setItem('theme', modoNoturnoSwitch.checked ? 'dark' : 'light');
+            aplicarTema();
+        });
+    }
+
+    aplicarTema(); // Aplica o tema ao carregar a página
 });
