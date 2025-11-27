@@ -116,7 +116,7 @@
                 
                 <ul class="lista-torcisao">
                     
-                    <li class="politica-item" data-letra="T" data-texto="odos compromissados permanentemente com:"></li>
+                    <li class="politica-item" data-letra="T" data-texto="Todos compromissados permanentemente com:"></li>
                     
                     <li class="politica-item" data-letra="O" data-texto="bservação criteriosa das necessidades dos clientes."></li>
                     
@@ -128,7 +128,7 @@
                     
                     <li class="politica-item" data-letra="S" data-texto="atisfação dos clientes garantindo uma parceria confiável."></li>
                     
-                    <li class="politica-item" data-letra="A" data-texto="mbiente de trabalho agradável."></li>
+                    <li class="politica-item" data-letra="A" data-texto="Ambiente de trabalho agradável."></li>
                     
                     <li class="politica-item" data-letra="O" data-texto="bjetificar cada vez mais ações e negociações eficazes."></li>
 
@@ -244,23 +244,53 @@
 <script src="script.js"></script>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const itensPolitica = document.querySelectorAll('.politica-item');
-    const textoExpandido = document.getElementById('texto-expandido');
+    document.addEventListener('DOMContentLoaded', () => {
+        const itensPolitica = document.querySelectorAll('.politica-item');
+        const textoExpandido = document.getElementById('texto-expandido');
+        let timer;
 
-    if (itensPolitica.length > 0 && textoExpandido) {
-        itensPolitica.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                const texto = item.getAttribute('data-texto');
-                textoExpandido.textContent = texto;
-            });
+        if (itensPolitica.length > 0 && textoExpandido) {
+            const textoPadrao = itensPolitica[0].getAttribute('data-texto');
+            textoExpandido.textContent = textoPadrao;
 
-            item.addEventListener('mouseleave', () => {
-                textoExpandido.textContent = 'Passe o mouse sobre uma letra para ler.';
+            itensPolitica.forEach((item, index) => {
+                item.addEventListener('mouseenter', () => {
+                    clearTimeout(timer);
+                    // Se for o último 'O'
+                    if (index === itensPolitica.length - 1) {
+                        let i = 0;
+                        function mostrarProximo() {
+                            if (i < itensPolitica.length) {
+                                const texto = itensPolitica[i].getAttribute('data-texto');
+                                textoExpandido.textContent = texto;
+                                i++;
+                                timer = setTimeout(mostrarProximo, 1200); // Muda a frase a cada 1.2 segundos
+                            }
+                        }
+                        mostrarProximo();
+                    } else {
+                        const texto = item.getAttribute('data-texto');
+                        textoExpandido.textContent = texto;
+                    }
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    clearTimeout(timer);
+                    textoExpandido.textContent = textoPadrao;
+                });
             });
-        });
-    }
-});
+        }
+    });
 </script>
+<style>
+    .politica-item:hover {
+        background-color: #F57C00;
+        color: white;
+    }
+    .lista-torcisao {
+        display: flex;
+        gap: 10px;
+    }
+</style>
     </body>
 </html>
