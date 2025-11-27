@@ -117,4 +117,42 @@ document.addEventListener('DOMContentLoaded', () => {
             aplicarTema(modoNoturnoSwitch);
         });
     }
+
+    // --- Início da Lógica para o Efeito Hover nas Letras ---
+
+    // Seleciona todas as letras que têm o atributo 'data-letra'
+    const letras = document.querySelectorAll('[data-letra]');
+
+    // Cria um único elemento para mostrar a frase, que será reutilizado
+    const fraseHover = document.createElement('div');
+    fraseHover.classList.add('frase-hover'); // Aplica a classe CSS que criamos
+    document.body.appendChild(fraseHover); // Adiciona o elemento ao corpo da página
+
+    // Adiciona os eventos de mouse para cada letra
+    letras.forEach(letra => {
+        // Evento para quando o mouse entra na letra
+        letra.addEventListener('mouseenter', (event) => {
+            const texto = letra.getAttribute('data-texto'); // Pega o texto da frase
+            if (texto) {
+                fraseHover.textContent = texto; // Define o texto do balão
+                fraseHover.style.display = 'block'; // Torna o balão visível
+
+                // Calcula a posição para o balão aparecer ao lado da letra
+                const rect = letra.getBoundingClientRect();
+                fraseHover.style.left = `${rect.right + window.scrollX + 10}px`; // 10px à direita da letra
+                fraseHover.style.top = `${rect.top + window.scrollY + (rect.height / 2) - (fraseHover.offsetHeight / 2)}px`; // Centralizado verticalmente
+            }
+        });
+
+        // Evento para quando o mouse sai da letra
+        letra.addEventListener('mouseleave', () => {
+            fraseHover.style.display = 'none'; // Esconde o balão
+        });
+
+        // Opcional: se o usuário mover o mouse rápido, também escondemos
+        fraseHover.addEventListener('mouseleave', () => {
+            fraseHover.style.display = 'none';
+        });
+    });
+    // --- Fim da Lógica para o Efeito Hover nas Letras ---
 });
